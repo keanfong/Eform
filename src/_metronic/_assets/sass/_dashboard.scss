@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+
+.dashboard-page {
+    width: 100%;
+
+    .card-body {
+        width: 100%;
+        height: max-content;
+    }
+    .quotebox {
+        height: 100%;
+        width: 100%;
+        border: 1px solid $gray-100 !important; 
+        border-radius: 5px;
+        text-align: center; 
+        font-family: 'Special Elite', cursive;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 3rem !important;
+        // background: #fffdf5;
+        color: #21213b;
+        
+          
+          blockquote {
+            font-weight: 100;
+            font-size: 2rem;
+            max-width: 600px;
+            line-height: 1.4;
+            position: relative;
+            margin: 0;
+            padding: .5rem;
+
+            &:before,
+            &:after {
+              position: absolute;
+              font-size: 8rem;
+              width: 4rem;
+              height: 4rem;
+            }
+
+            &:before {
+              content: '“';
+              left: -5rem;
+              top: -2rem;
+            }
+            
+            &:after {
+              content: '”';
+              right: -5rem;
+              bottom: 1rem;
+            }
+
+          }
+          
+          cite {
+            line-height: 3;
+            text-align: left;
+          }
+  
+      }
+      
+      .quote {
+        margin: 20px !important;
+      }
+      
+      .fadeIn {
+        opacity: 1;
+        display: block;
+        animation: slidein 2s alternate;
+        margin: 0 20px;
+      }
+      
+      @keyframes slidein {
+        0% {
+          opacity: 0;
+          transform: translateY(-50px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      
+      .author {
+        margin: 20px;
+        font-style: italic;
+        text-align: right;
+      }
+}
+
+.report-table {
+  margin: 7px;
+  overflow: scroll;
+  overflow-x: auto;
+  overflow-y: hidden;
+  table{
+    border: 2px solid $gray-200 !important; 
+    border-radius: 5px;
+  }
+  th, tr{
+    text-align: center;
+  }
+ 
+}
+
+
+.dashboard-page, .activity-page, .draft-page,.record-page{
+  .ant-table, .card {
+    min-width: 60em;
+    overflow: scroll;
+    overflow-y: hidden;
+  }
+}
+
+.dashboard-page{
+  .card {
+    min-width: max-content !important;
+  }
+}
+
+
+.fade-hide {
+  opacity: 0;
+  -webkit-transition: all .30s linear;
+  -o-transition: all .30s linear;
+  transition: all .30s linear;
+  transform: scale(0);
+}
+
+.fade-custom.in {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.view-form-modal, .view-slip-modal{
+  max-width: 70vw !important;
+  min-height: 80vh;
+  transition: 4s;
+  .text-area {
+    width: 100% !important;
+  }
+
+  .modal-header {
+    background-color: $form-background;
+  }
+  .ant-modal{
+    width: 70vw !important;
+
+    .ant-tag {
+      margin-right: 0;
+      border-radius: 0;
+    }
+  }
+
+  .status-label{
+    border-radius: 0 !important;
+    text-transform:capitalize;
+  }
+
+  .view-form{
+    .row{
+      &:first-child{
+        border-top: none !important;
+        margin: 0;
+        padding-top: 0;
+      }
+      border-top: 2px solid $gray-300;
+      margin: 1rem 0 2rem 0;
+      padding-top: 2rem;
+
+      .ant-list{
+        width: 100%;
+      }
+    }
+  }
+
+  .ant-modal-footer{
+    display: inline-flex;
+    width: 100%;
+    .modal-button {
+      margin-left: 20px;
+    }
+  }
+
+
+  .remark-field {
+    margin: 2rem 1rem 0 1rem;
+  }
+
+  .break, .hidden {
+    float: right !important;
+  }
+}
+
+.view-slip-modal{
+  .slip-form{
+    margin: 0;
+    padding: 0;
+
+    .slip-header{
+      .slip-name{
+        margin-left: 1rem;
+      }
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 2px solid $gray-300;
+    }
+  }
+}

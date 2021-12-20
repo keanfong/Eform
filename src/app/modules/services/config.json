@@ -1,0 +1,406 @@
+{
+    "FORM_TYPE": [
+        {
+            "type": "hidden",
+            "allowed_types": [
+                "hidden"
+            ]
+        },
+        {
+            "type": "break",
+            "allowed_types": [
+                "break"
+            ]
+        },
+        {
+            "type": "text",
+            "allowed_types": [
+                "textinput",
+                "textarea",
+                "text"
+            ]
+        },
+        {
+            "type": "number",
+            "allowed_types": [
+                "integer",
+                "float"
+            ]
+        },
+        {
+            "type": "checkbox",
+            "allowed_types": [
+                "boolean"
+            ]
+        },
+        {
+            "type": "file",
+            "allowed_types": [
+                "file"
+            ]
+        },
+        {
+            "type": "date",
+            "allowed_types": [
+                "date"
+            ]
+        },
+        {
+            "type": "dropdown",
+            "allowed_types": [
+                "dropdown"
+            ]
+        },
+        {
+            "type": "link",
+            "allowed_types": [
+                "link_purchase",
+                "link_travel",
+                "link_advance"
+            ]
+        }
+    ],
+    "FORM_TABLE_COLUMNS": [
+        {
+            "type": "string",
+            "text": "Id",
+            "dataIndex": "id",
+            "key": "id",
+            "hidden": false,
+            "index": 0
+        },
+        {
+            "type": "string",
+            "text": "Serial Number",
+            "dataIndex": "serial_number",
+            "key": "serial_number",
+            "index": 1
+        },
+        {
+            "type": "string",
+            "text": "Type",
+            "dataIndex": "form_name",
+            "key": "form_name",
+            "index": 2
+        },
+        {
+            "type": "object",
+            "text": "Submitted By",
+            "dataIndex": "submitted_by",
+            "key": "submitted_by",
+            "index": 3
+        },
+        {
+            "type": "object",
+            "text": "Submitted for",
+            "dataIndex": "submitted_for",
+            "key": "submitted_for",
+            "index": 4
+        },
+        {
+            "type": "string",
+            "text": "Status",
+            "dataIndex": "status",
+            "key": "status",
+            "index": 5
+        },
+        {
+            "type": "date",
+            "text": "Data submitted",
+            "dataIndex": "created",
+            "key": "created",
+            "index": 6
+        },
+        {
+            "type": "date",
+            "text": "Data updated",
+            "dataIndex": "modified",
+            "key": "modified",
+            "index": 7
+        },
+        {
+            "type": "action",
+            "text": "Action",
+            "dataIndex": "action",
+            "key": "action",
+            "index": 8
+        },
+        {
+            "type": "string",
+            "text": "Select",
+            "dataIndex": "select",
+            "key": "select",
+            "index": 9
+        }
+    ],
+    "REPORT_FILTER": [
+        {
+            "options": [
+                {
+                    "value": "approved",
+                    "label": "Approved"
+                },
+                {
+                    "value": "pending",
+                    "label": "Pending"
+                }
+            ],
+            "default": "",
+            "type": "dropdown",
+            "extra": {},
+            "label": "Filter by status",
+            "slug": "approvals__status",
+            "optional": true
+        },
+        {
+            "options": [],
+            "default": "",
+            "type": "dropdown",
+            "extra": {},
+            "label": "Filter by claim cycle",
+            "slug": "claim-form_cycle",
+            "optional": true
+        },
+        {
+            "options": [
+                {
+                    "value": "MYR",
+                    "label": "MYR"
+                },
+                {
+                    "value": "USD",
+                    "label": "USD"
+                },
+                {
+                    "value": "SGD",
+                    "label": "SGD"
+                },
+                {
+                    "value": "PHP",
+                    "label": "PHP"
+                },
+                {
+                    "value": "IDR",
+                    "label": "IDR"
+                },
+                {
+                    "value": "MMK",
+                    "label": "MMK"
+                },
+                {
+                    "value": "VND",
+                    "label": "VND"
+                }
+            ],
+            "default": "",
+            "type": "dropdown",
+            "extra": {},
+            "label": "Filter by currency",
+            "slug": "currency",
+            "optional": true
+        },
+        {
+            "options": [],
+            "default": "",
+            "type": "dropdown",
+            "extra": {},
+            "label": "Filter by company",
+            "slug": "company",
+            "optional": true
+        },
+        {
+            "options": [
+                {
+                    "value": "FY20",
+                    "label": "FY20"
+                },
+                {
+                    "value": "FY21",
+                    "label": "FY21"
+                },
+                {
+                    "value": "FY22",
+                    "label": "FY22"
+                },
+                {
+                    "value": "FY23",
+                    "label": "FY23"
+                },
+                {
+                    "value": "FY24",
+                    "label": "FY24"
+                }
+            ],
+            "default": "",
+            "type": "dropdown",
+            "extra": {},
+            "label": "Filter by financial year",
+            "slug": "financial_year",
+            "optional": true
+        },
+        {
+            "options": null,
+            "default": null,
+            "type": "date",
+            "extra": {},
+            "label": "Filter from date",
+            "slug": "created__gte",
+            "help": "",
+            "optional": true,
+            "dateFormat": "YYYY-MM-DDTHH:mm"
+        },
+        {
+            "options": null,
+            "default": null,
+            "type": "date",
+            "extra": {},
+            "label": "Filter to date",
+            "slug": "created__lte",
+            "help": "",
+            "optional": true,
+            "dateFormat": "YYYY-MM-DDTHH:mm"
+        }
+    ],
+    "REPORT_ACCESS_ROLES": [
+        "Claim Verifier",
+        "PT. TMI Claim Verifier",
+        "Tekmark Broadcast Claim Verifier",
+        "Tekmark Pte Ltd Claim Verfier",
+        "Tekmark Sdn Bhd Claim Verifier",
+        "Tekmark Solutions Claim Verifier",
+        "Worldsoft Technologies Claim Verifier"
+    ],
+    "MICROSOFT_APP_CONFIG": {
+        "appId": "7bb69735-515f-4de4-8b88-edb349e185a4",
+        "redirectUri": "https://master.dd9eklzqbt2xt.amplifyapp.com/",
+        "scopes": [
+            "user.read",
+            "mailboxsettings.read"
+        ]
+    },
+    "FORM_DEPENDENCY": [
+        {
+            "formName": "manpower",
+            "forms": [
+                {
+                    "updateSlug": "type-of-requisition",
+                    "fields": [
+                        {
+                            "selectedValue": "",
+                            "shownFields": [
+                                "name",
+                                "submitted-for",
+                                "bu",
+                                "company",
+                                "financial-year",
+                                "date-required",
+                                "type-of-requisition",
+                                "job-status",
+                                "position",
+                                "reporting-to",
+                                "min-qualification",
+                                "specific-requirement",
+                                "gender",
+                                "years-of-experience",
+                                "industry-knowledge"
+                            ]
+                        },
+                        {
+                            "selectedValue": "Replacement",
+                            "shownFields": [
+                                "name",
+                                "submitted-for",
+                                "bu",
+                                "company",
+                                "financial-year",
+                                "date-required",
+                                "type-of-requisition",
+                                "staff-replaced",
+                                "job-status",
+                                "position",
+                                "reporting-to",
+                                "min-qualification",
+                                "specific-requirement",
+                                "gender",
+                                "years-of-experience",
+                                "industry-knowledge"
+                            ]
+                        },
+                        {
+                            "selectedValue": "New Head Count (Attached with Proposal)",
+                            "shownFields": [
+                                "name",
+                                "submitted-for",
+                                "bu",
+                                "company",
+                                "financial-year",
+                                "date-required",
+                                "type-of-requisition",
+                                "job-status",
+                                "position",
+                                "reporting-to",
+                                "min-qualification",
+                                "specific-requirement",
+                                "gender",
+                                "years-of-experience",
+                                "industry-knowledge",
+                                "budgeted",
+                                "proposal-attachment",
+                                "current-gap",
+                                "current-workload",
+                                "impact",
+                                "expected-different-output"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "updateSlug": "specific-requirement",
+                    "fields": [
+                        {
+                            "selectedValue": true,
+                            "shownFields": [
+                                "name",
+                                "submitted-for",
+                                "bu",
+                                "company",
+                                "financial-year",
+                                "date-required",
+                                "type-of-requisition",
+                                "job-status",
+                                "position",
+                                "reporting-to",
+                                "min-qualification",
+                                "specific-requirement",
+                                "specification",
+                                "gender",
+                                "years-of-experience",
+                                "industry-knowledge"
+                            ]
+                        },
+                        {
+                            "selectedValue": false,
+                            "shownFields": [
+                                "name",
+                                "submitted-for",
+                                "bu",
+                                "company",
+                                "financial-year",
+                                "date-required",
+                                "type-of-requisition",
+                                "job-status",
+                                "position",
+                                "reporting-to",
+                                "min-qualification",
+                                "specific-requirement",
+                                "gender",
+                                "years-of-experience",
+                                "industry-knowledge"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

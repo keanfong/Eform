@@ -1,0 +1,909 @@
+//
+// Forms
+//
+
+// Form group
+.form-group {
+    label {
+        font-size: $form-label-font-size;
+        font-weight: $form-label-font-weight;
+        color: $dark-75;
+    }
+
+    .invalid-feedback,
+    .valid-feedback {
+        font-size: $form-feedback-font-size;
+        font-weight: $form-feedback-font-weight;
+    }
+
+    .form-text {
+        font-size: $form-text-font-size;
+        font-weight: $form-text-font-weight;
+    }
+}
+
+// Form control
+.form-control {
+    // Readonly state
+    &[readonly] {
+        background-color: $input-readonly-bg;
+    }
+
+    // Pill style
+    &.form-control-pill {
+        border-radius: $input-line-height;
+
+        &.form-control-sm {
+            border-radius: $input-line-height-sm;
+        }
+
+        &.form-control-lg {
+            border-radius: $input-line-height-lg;
+        }
+    }
+
+    @if $form-validation-input-shadow == false {
+        &:active,
+        &.active,
+        &:focus,
+        &.focus {
+            box-shadow: none !important;
+        }
+    }
+
+    // Solid style
+    &.form-control-solid {
+        background-color: $input-solid-bg;
+        border-color: $input-solid-bg;
+        @include placeholder($input-solid-placeholder-color);
+        color: $input-solid-color;
+        transition: $transition-input;
+
+        &:active,
+        &.active,
+        &:focus,
+        &.focus {
+            background-color: $input-solid-bg-focus;
+            border-color: $input-solid-bg-focus;
+            color: $input-solid-color;
+            transition: $transition-input;
+        }
+    }
+
+    .custom-textfield {
+        .Mui-focused {
+            &:focus {
+                color: blue !important;
+                border-bottom: blue !important;
+            }
+        }
+    }
+}
+
+// Hide Form Control Icon On Validation
+.form-control-iconless {
+    background-image: none;
+
+    .form-control {
+        background-image: none;
+    }
+}
+
+// Placeholder colors
+.placeholder-dark-50 {
+    @include placeholder($dark-50);
+}
+
+.placeholder-dark-75 {
+    @include placeholder($dark-75);
+}
+
+.placeholder-white {
+    @include placeholder($white);
+}
+
+// Custom inputs
+.custom-select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-shadow: none;
+}
+
+.custom-file {
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    height: 4rem;
+    padding-right: 1em;
+
+    input {
+        width: 70%;
+        height: 25px;
+        padding-right: 60px;
+    }
+
+    a {
+        top: 1.2rem;
+    }
+
+    .upload-button,
+    .file-view {
+        width: 100%;
+        left: 1.5rem;
+        position: absolute;
+        display: inline-flex;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // top: 0.8rem;
+
+        .ant-upload-list {
+            display: inline-flex;
+            margin-top: -4px !important;
+        }
+    }
+
+    .file-view {
+        max-width: fit-content;
+    }
+}
+
+.custom-file-input:focus ~ .custom-file-label {
+    box-shadow: none !important;
+}
+
+.custom-file-label {
+    text-align: left;
+
+    &:after {
+        float: left;
+    }
+}
+
+// Input Group
+.input-group {
+    .form-control.is-valid + .input-group-append,
+    .form-control.is-invalid + .input-group-append {
+        margin-left: 0;
+    }
+
+    .input-group-prepend + .form-control.is-valid,
+    .input-group-prepend + .form-control.is-invalid {
+        margin-left: 1px;
+    }
+
+    // Sizing
+    i {
+        line-height: 0;
+        font-size: 1.3rem;
+
+        &:after,
+        &:before {
+            line-height: 0;
+        }
+    }
+
+    .svg-icon {
+        line-height: 0;
+    }
+
+    &.input-group-sm {
+        i {
+            line-height: 0;
+            font-size: 1rem;
+        }
+    }
+
+    &.input-group-lg {
+        i {
+            line-height: 0;
+            font-size: 1.4rem;
+        }
+    }
+
+    // Solid style
+    &.input-group-solid {
+        align-items: center;
+        background-color: $input-solid-bg;
+        @include border-radius($input-border-radius);
+
+        &.active,
+        &.focus {
+            background-color: $input-solid-bg-focus;
+            border-color: $input-solid-bg-focus;
+            color: $input-solid-color;
+            transition: $transition-input;
+        }
+
+        .form-control {
+            @include input-reset();
+
+            &.form-control-solid {
+                &:active,
+                &.active,
+                &:focus,
+                &.focus {
+                    background-color: $input-solid-bg-focus;
+                    border-color: $input-solid-bg-focus;
+                    color: $input-solid-color;
+                    transition: $transition-input;
+                }
+            }
+        }
+
+        &.input-group-sm {
+            @include border-radius($input-border-radius-sm);
+        }
+
+        &.input-group-lg {
+            @include border-radius($input-border-radius-lg);
+        }
+
+        .input-group-prepend,
+        .input-group-append,
+        .input-group-text {
+            background-color: transparent;
+            border: 0;
+            padding-top: 0;
+            padding-bottom: 0;
+
+            .btn-secondary {
+                border: 0 !important;
+            }
+        }
+
+        .input-group-prepend ~ .form-control {
+            padding-left: 0 !important;
+        }
+    }
+}
+
+// Validation
+.validated {
+    .valid-feedback,
+    .invalid-feedback {
+        display: block;
+    }
+}
+
+// Input icon
+.input-icon {
+    position: relative;
+
+    span {
+        left: 0;
+        top: 0;
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: calc(
+            #{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border}
+        );
+
+        i {
+            line-height: 0;
+            color: $dark-50;
+
+            &:after,
+            &:before {
+                line-height: 0;
+            }
+        }
+
+        .svg-icon {
+            @include svg-icon-color($dark-50);
+            @include svg-icon-size(24px);
+        }
+    }
+
+    .form-control {
+        padding-left: calc(
+            #{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border}
+        );
+    }
+
+    &.input-icon-right {
+        span {
+            right: 0;
+            left: auto;
+        }
+
+        .form-control {
+            padding-left: $input-btn-padding-x;
+            padding-right: calc(
+                #{$input-line-height * 1em} + #{$input-padding-y * 2} + #{$input-height-border}
+            );
+        }
+    }
+}
+
+// Textarea reset resize
+.resize-none {
+    resize: none;
+}
+
+.container-fluid {
+    width: 100% !important;
+    display: flex;
+    height: max-content !important;
+
+    .form-view {
+        width: 100%;
+        display: 80%;
+
+        .form-heading {
+            background: $form-banner;
+            color: white;
+            height: 15rem;
+            display: flex;
+            position: relative;
+            width: 100%;
+            border-radius: 4px;
+            font-size: 24px;
+            font-weight: bolder;
+            .form-text {
+                margin: auto;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .form-body {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: row;
+        position: relative;
+        .forms-list {
+            width: 45%;
+            display: inline-flex;
+            flex-direction: row;
+            position: relative;
+            height: 9rem;
+            min-height: 6rem;
+            top: -2rem;
+            margin: 0 2em;
+            margin-bottom: 1.5rem;
+            justify-content: space-between;
+
+            a {
+                outline: none;
+                width: 100%;
+            }
+            .form-detail {
+                width: 100%;
+                display: inline-flex;
+                padding-left: 20px;
+                padding-right: 10px;
+                background: $form-background;
+                border-radius: 4px;
+                height: 9rem;
+
+                &:hover {
+                    background: $form-hover !important;
+                }
+            }
+            .form-col {
+                display: flex;
+                align-items: center;
+            }
+            .form-short-name,
+            .form-name-section {
+                font-size: 20px;
+                font-weight: bolder;
+                color: $white;
+                margin: 2em 0;
+            }
+
+            .form-name-section {
+                display: flex;
+                align-items: center;
+            }
+
+            .form-name {
+                padding: 2px;
+            }
+
+            .form-short-name {
+                padding: 0 !important;
+                margin: 0 !important;
+                .short-name {
+                    float: right;
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.break {
+    float: right !important;
+    height: 4rem;
+}
+
+.form-input,
+.table-fields {
+    .date-field {
+        width: 100% !important;
+        height: 4rem;
+        border-color: rgba(0, 0, 0, 0.23);
+
+        input::placeholder {
+            /* Chrome/Opera/Safari */
+            color: rgba(0, 0, 0, 0.53) !important;
+        }
+
+        border-radius: 4px;
+        .ant-picker-focused {
+            border-color: $primary;
+        }
+        .ant-picker-suffix {
+            color: rgba(0, 0, 0, 0.53);
+        }
+    }
+    .file {
+        margin: 1rem 0 !important;
+    }
+}
+
+.tally-fields,
+.form-input {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    width: 50%;
+    position: relative !important;
+    margin: 0.5rem 0;
+
+    input[type="checkbox"] {
+        float: left !important;
+        margin-left: 1rem !important;
+        height: 2rem !important;
+        width: 2rem !important;
+    }
+
+    .text-fields {
+        margin-top: 0px;
+        margin-bottom: 10px !important;
+        width: 100% !important;
+    }
+    .custom-fields {
+        width: 50em !important;
+        margin-top: 0 !important;
+        &.reference-field {
+            .MuiInputAdornment-root {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                button {
+                    // margin-left: 1rem !important;
+                    border-radius: 2rem !important;
+                    margin-bottom: 5px !important;
+                    border: 0 solid $gray-100 !important;
+                    height: 25px;
+                    width: 25px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    line-height: 24px;
+                    svg {
+                        height: 1rem !important;
+                        width: 1rem !important;
+                    }
+                }
+            }
+        }
+    }
+
+    .MuiInputBase-formControl {
+        height: 3.5rem;
+    }
+
+    .top-10 {
+        top: 8px !important;
+        label {
+            margin-left: 2.5em !important;
+        }
+    }
+
+    .upload-button {
+        top: 0.8rem;
+    }
+
+    .MuiFormControl-root {
+        vertical-align: unset !important;
+    }
+}
+
+.checkbox-label {
+    position: absolute;
+    margin-top: 0.5rem;
+    left: 1.5rem;
+}
+
+.nav-tabs {
+    cursor: pointer !important;
+}
+
+.table-fields {
+    margin-top: 0 !important;
+    margin-left: 0;
+
+    width: 100% !important;
+    .error {
+        top: 0.8rem;
+    }
+    .file {
+        padding-right: 0 !important;
+        margin: 0 !important;
+    }
+
+    .action-coloumn {
+        display: table-cell !important;
+        height: 100% !important;
+        right: 1px !important;
+    }
+    .action-button {
+        padding: 0 20px 3px 20px;
+        width: 100%;
+        justify-content: space-between;
+
+        button {
+            margin-left: 1rem !important;
+            border-radius: 2rem !important;
+            margin-bottom: 5px !important;
+            border: 0 solid $gray-100 !important;
+
+            svg {
+                height: 1rem !important;
+                width: 1rem !important;
+            }
+        }
+    }
+
+    .date {
+        display: block !important;
+        flex-direction: column !important;
+        .date-field {
+            margin-top: -10px !important;
+        }
+        .error {
+            top: 0 !important;
+            margin-top: 1rem !important;
+            padding-top: 0.4rem !important;
+        }
+    }
+
+    .ant-table-body {
+        overflow-y: hidden !important;
+        max-height: fit-content !important;
+    }
+
+    table {
+        th {
+            font-weight: 400 !important;
+            font-size: 0.8rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.05rem !important;
+        }
+
+        td {
+            // padding-left: 0 !important;
+            padding: 0 !important;
+            padding-top: 8px !important;
+            padding-bottom: 8px !important;
+        }
+
+        .add-row {
+            margin-top: -1rem;
+            margin-bottom: 0.55rem;
+            margin-right: 1vh;
+        }
+
+        .delete-row {
+            margin-bottom: 0.55rem;
+            margin-right: 2.5vh !important;
+        }
+
+        .add-row,
+        .delete-row {
+            a {
+                height: calc(1em + 0.8rem + 1.5px) !important;
+                width: calc(1em + 0.8rem + 1.5px) !important;
+            }
+        }
+    }
+
+    .custom-file {
+        height: 4rem !important;
+        .hide-button {
+            .ant-upload-select {
+                display: none !important;
+            }
+        }
+
+        .upload-button {
+            position: absolute;
+            display: flex;
+
+            .ant-upload-list {
+                display: inline-block;
+                margin-top: -4px !important;
+            }
+
+            .ant-btn {
+                height: 64px;
+                padding: 0 5px 0 0;
+                border-radius: 4px;
+                font-size: 12px;
+                width: 8rem;
+
+                svg {
+                    margin-left: 2px !important;
+                    margin-top: -5px;
+                }
+                .anticon {
+                    margin-left: 3px;
+                }
+                span {
+                    margin-left: 5px;
+                    word-break: break-all;
+                    display: inline-block;
+                }
+            }
+
+            .ant-upload-list {
+                display: inline-block;
+                margin-top: 13px !important;
+
+                .ant-upload-list-item-info {
+                    .ant-upload-span {
+                        width: 10rem;
+                    }
+                }
+                .ant-upload-list-item-card-actions-btn {
+                    width: 3.4rem;
+                }
+                &:hover {
+                    .ant-upload-list-item-card-actions-btn {
+                        height: 0;
+
+                        svg {
+                            text-align: left;
+                        }
+                    }
+                }
+            }
+        }
+
+        .upload-button,
+        .file-view {
+            left: 0.5rem !important;
+        }
+
+        .file-view {
+            max-width: fit-content;
+            display: inline-block;
+        }
+    }
+}
+
+.table-responsive {
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    &:hover {
+        &::-webkit-scrollbar {
+            display: block !important;
+        }
+
+        &::-webkit-scrollbar-track {
+            display: block !important;
+            background: $white; /* color of the tracking area */
+        }
+
+        &::-webkit-scrollbar-thumb {
+            display: block !important;
+            background-color: $gray-100; /* color of the scroll thumb */
+            border-radius: 20px; /* roundness of the scroll thumb */
+        }
+    }
+}
+
+table {
+    .form-input {
+        display: inline-flex;
+        flex-direction: row;
+        width: 100%;
+        position: relative;
+        margin: 0 !important;
+        // z-index: 9999 !important;
+
+        input[type="checkbox"] {
+            float: left !important;
+            margin-left: 1rem !important;
+            height: 2rem !important;
+            width: 2rem !important;
+        }
+
+        .text-fields {
+            margin-top: 0px;
+        }
+        .custom-fields {
+            margin-top: 0 !important;
+            // top: -7px !important;
+        }
+
+        .MuiInputBase-formControl {
+            height: 4rem !important;
+        }
+    }
+    .upload-button {
+        bottom: 0.08rem !important;
+        top: -0.1rem !important;
+    }
+}
+
+.slip-form {
+    .ant-btn {
+        height: 6.5vh !important;
+        width: 8rem !important;
+    }
+}
+
+.tally {
+    margin-top: 2vh;
+}
+.tally-fields {
+    display: inline-flex !important;
+    float: right !important;
+    flex-direction: row !important;
+    width: 30% !important;
+    position: relative !important;
+    margin-bottom: 1rem !important;
+}
+
+.tally-row {
+    width: 100% !important;
+    display: inline-block !important;
+}
+.tally {
+    width: 100%;
+}
+.date-row {
+    width: 100%;
+    padding-right: 1.2rem;
+    label {
+        position: absolute;
+        font-size: 12px;
+        top: -15px;
+        left: 10px;
+        opacity: 0.7;
+    }
+}
+
+.error-text,
+.error {
+    color: #f44336 !important;
+    border-color: #f44336 !important;
+}
+
+.file {
+    height: 3.8rem;
+    padding-right: 1.3rem;
+    margin: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.approvers {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card {
+    width: 100%;
+    .ant-list {
+        width: 100%;
+        min-width: 100%;
+    }
+}
+
+.card-footer {
+    display: inline-flex;
+    text-align: center !important;
+    justify-content: space-between !important;
+
+    button {
+        margin: 0 auto !important;
+    }
+}
+
+.required {
+    fieldset,
+    .date-field,
+    .upload-button button {
+        border-color: red !important;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .forms-list {
+        width: 100% !important;
+        .form-detail {
+            margin: 0 !important;
+            padding-left: 0 !important;
+        }
+        .form-short-name {
+            display: none;
+        }
+        .form-name {
+            margin-left: -3rem !important;
+        }
+    }
+}
+
+@media screen and (max-width: 600) {
+    .forms-list {
+        width: 80% !important;
+        height: 10rem !important;
+        margin: 0 5rem !important;
+        .form-col {
+            margin-top: 1.5rem !important;
+        }
+        .form-name-section {
+            margin-top: 2.3rem !important;
+        }
+    }
+}
+
+@media screen and (max-width: 1596px) {
+    .forms-list {
+        margin: 0 1em 1.5em !important;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .forms-list {
+        width: 80% !important;
+        margin: 0 3em !important;
+        margin-bottom: 1rem !important;
+        .form-col {
+            margin-top: 1.5rem !important;
+        }
+        .form-name-section {
+            margin-top: 2.3rem !important;
+        }
+    }
+    .form-input {
+        width: 100% !important;
+    }
+    .upload-button {
+        top: 0.7rem !important;
+    }
+    .table-fields {
+        .ant-btn {
+            height: 55px !important ;
+            width: 9rem !important;
+        }
+    }
+
+    .custom-file {
+        a {
+            width: 3em !important;
+        }
+    }
+}
+
+.right {
+    justify-content: flex-end;
+}
+
+.guidelines {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,246 @@
+// 3rd-party Plugins
+@import "~highlight.js/styles/googlecode.css";
+@import "~perfect-scrollbar/css/perfect-scrollbar.css";
+
+// Theme Styles
+@import "./_metronic/_assets/sass/style.react.scss";
+
+// Default Layout themes
+@import "./_metronic/_assets/sass/themes/layout/header/base/light.scss";
+@import "./_metronic/_assets/sass/themes/layout/header/menu/light.scss";
+@import "./_metronic/_assets/sass/themes/layout/brand/dark.scss";
+@import "./_metronic/_assets/sass/themes/layout/aside/dark.scss";
+
+// Header themes
+// Light
+//@import "./_metronic/_assets/sass/themes/layout/header/base/light.scss";
+// Dark
+// @import "./_metronic/_assets/sass/themes/layout/header/base/dark.scss";
+
+// Header Menu themes
+// Light
+//@import "./_metronic/_assets/sass/themes/layout/header/menu/light.scss";
+// Dark
+// @import "./_metronic/_assets/sass/themes/layout/header/menu/dark.scss";
+
+// Brand themes
+.brand-dark {
+  @import "./_metronic/_assets/sass/themes/layout/brand/dark.scss";
+}
+// Light
+.brand-light {
+  @import "./_metronic/_assets/sass/themes/layout/brand/light.scss";
+}
+
+// Aside themes
+// Dark
+//@import "./_metronic/_assets/sass/themes/layout/aside/dark.scss";
+// Light
+// @import "./_metronic/_assets/sass/themes/layout/aside/light.scss";
+
+// .example-highlight {
+//   padding: 0rem 1.5rem 1.75rem !important;
+// }
+
+.example-highlight > pre {
+  background: none transparent !important;
+  margin: 0 !important;
+  padding-top: 0.5rem;
+  code {
+      overflow-y: auto;
+      display: block;
+
+      span {
+        background: none transparent !important;
+      }
+  }
+}
+
+.json > pre {
+  background: none #fff !important;
+
+}
+
+.example-code > .json {
+  background: none #fff !important;
+}
+
+.symbol.symbol-45 > svg {
+  width: 100%;
+  max-width: 45px;
+  height: 45px;
+}
+
+.react-bootstrap-table {
+  overflow-x: auto;
+}
+
+.react-bootstrap-table {
+  th {
+    outline: none;
+
+    &.sortable {
+      .svg-icon-sort {
+        opacity: 0;
+      }
+
+      &:hover {
+        cursor: pointer;
+
+        .svg-icon-sort {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  .table.table-head-custom thead tr {
+    .sortable-active {
+        color: $primary !important;
+    }
+  }
+}
+
+.cursor-default {
+  cursor: default !important;
+}
+
+.display-block {
+  display: block;
+}
+
+
+.splash-screen {
+  height: 40px;
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  span {
+    font-family: -apple-system, BlinkMacSystemFont,
+        "Segoe UI", Roboto,Oxygen, Ubuntu, Cantarell,
+        "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 24px;
+    color: $primary;
+    display: inline-block;
+    transition: all 0.1s;
+    animation: animate 1s infinite;
+
+    &:nth-child(1) {
+      animation-delay: 0.01s;
+    }
+    &:nth-child(2) {
+      animation-delay: 0.02s;
+    }
+    &:nth-child(3) {
+      animation-delay: 0.12s;
+    }
+    &:nth-child(4) {
+      animation-delay: 0.16s;
+    }
+    &:nth-child(5) {
+      animation-delay: 0.20s;
+    }
+    &:nth-child(6) {
+      animation-delay: 0.24s;
+    }
+    &:nth-child(7) {
+      animation-delay: 0.28s;
+    }
+
+    @keyframes animate {
+      0% {
+          color: $primary;
+          transform: translateY(-1px);
+          margin-left: 0;
+      }
+      25% {
+          color: $primary;
+          transform: translateY(-15px);
+          margin-left: 10px;
+      }
+      100% {
+          color: $primary;
+          transform: translateY(0);
+          margin-left: 0;
+      }
+    }
+  }
+  }
+
+
+  *::-webkit-scrollbar {
+    width: 5px;               /* width of the entire scrollbar */
+    height: 15px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background:  $gray-200;        /* color of the tracking area */
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: $gray-400;    /* color of the scroll thumb */
+    border-radius: 30px;       /* roundness of the scroll thumb */
+    border: 3px solid $gray-400;  /* creates padding around scroll thumb */
+  }
+
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+    opacity: .5;
+    &:before {
+      content: '';
+      // use the linear-gradient for the fading effect
+      // use a solid background color for a solid bar
+      background: linear-gradient(to right, transparent, #818078, transparent);
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+    &:after {
+      content: attr(data-content);
+      position: relative;
+      display: inline-block;
+      color: black;
+
+      padding: 0 .5em;
+      line-height: 1.5em;
+      // this is really the only tricky part, you need to specify the background color of the container element...
+      color: #818078;
+      background-color: #fcfcfa;
+    }
+}
+
+
+// .drop-down label {
+// //   top: -8px  !important;
+//  //   left: -12px !important;
+// }
+
+.btn-dark-blue {
+  background-color: #1e3046 !important;
+}
+
+.badge-pink-color {
+    .MuiBadge-badge {
+        background-color: #f018a6;
+        color: #fff;
+    }
+}
+
+.fc-report-table-wrapper {
+    overflow: hidden;
+    margin: 8px;
+    margin-top: 16px;
+    border: 1px solid rgba(0, 0, 0, 0.23);
+    border-radius: 4px;
+}
